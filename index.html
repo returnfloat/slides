@@ -4,7 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Behind the Screens - A deep dive into my Homelab</title>
+
+		<meta name="description" content="Behind the Screens - A deep dive into my Homelab">
+		<meta name="author" content="Akash Bhavsar">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +22,688 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown data-separator="^----" data-separator-vertical="^====">
+					<script type="text/template">
+<!-- .slide class="full" -->
+# Behind the Screens
+A deep dive into my Homelab
+----
+## whoami
+====
+## Motivation
+- We work in an extremely fast-paced industry <!-- .element: class="fragment fade-up" -->
+- Career growth and mobility require constant learning <!-- .element: class="fragment fade-up" -->
+- More skills bring more opportunities <!-- .element: class="fragment fade-up" -->
+====
+## Outline
+1. History
+1. Hardware
+1. Network Diagram
+1. Infrastructure
+1. Applications
+1. Demo
+1. Q&A
+----
+<!-- .slide class="full" -->
+# History
+----
+<section data-auto-animate>
+	<h3>How it started ~2013</h3>
+	<p>
+		<ul>
+			<li>Raspberry Pi B (700 MHz Single-Core / 512 MB)</li>
+				<ul>
+					<li>XBMC - Media center connected to TV</li>
+					<li>External USB HDD</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="300" data-src="https://a.pololu-files.com/picture/0J4940.1200.jpg?853f23e5cfd5c2255e7a48085bbfabe0" />
+	<img height="300" data-src="https://upload.wikimedia.org/wikipedia/commons/f/fc/XBMC_logo.jpg" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Early Days ~2014-16</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+				<ul>
+					<li>XBMC - Media center connected to TV</li>
+					<li>External USB HDD</li>
+				</ul>
+			<li>Raspberry Pi B (866 MHz / 512 MB)</li>
+				<ul>
+					<li>Pi-hole</li>
+				</ul>
+			<li class="fragment highlight-red">No network attached storage</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://a.pololu-files.com/picture/0J4940.1200.jpg?853f23e5cfd5c2255e7a48085bbfabe0" />
+	<img height="200" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="200" data-src="https://upload.wikimedia.org/wikipedia/commons/f/fc/XBMC_logo.jpg" />
+	<img height="200" data-src="https://ads-blocker.com/wp-content/uploads/2019/12/pi-hole-ad-blocker.jpg" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Early Days ~2014-16</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+				<ul>
+					<li>XBMC - Media center connected to TV</li>
+				</ul>
+			<li>Raspberry Pi B (866 MHz / 512 MB)</li>
+				<ul>
+					<li>Pi-hole</li>
+				</ul>
+			<li>Netgear WNDR3800 <span class="fragment" data-fragment-index="1">with OpenWRT</span></li>
+		</ul>
+	</p>
+	<img height="150" data-src="https://a.pololu-files.com/picture/0J4940.1200.jpg?853f23e5cfd5c2255e7a48085bbfabe0" />
+	<img height="150" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="150" data-src="https://www.cnet.com/a/img/resize/64e75a408cc99bf852034d3c5caef99cae7f9994/hub/2011/09/20/b71ab1c0-bb76-11e2-8a8e-0291187978f3/34467812_OVR_RAW.jpg?auto=webp&width=768" />
+	<img height="150" data-src="https://external-preview.redd.it/5TsgyKsVUdjZcdaMZkCZQGf5X9Eddp6mAjoomzuG1RU.jpg?auto=webp&s=925c815f6989669b07e43af20b9eee189e179520" class="fragment" data-fragment-index="1" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Early Days ~2014-16</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+				<ul>
+					<li>XBMC - Media center connected to TV</li>
+				</ul>
+			<li>Raspberry Pi B (866 MHz / 512 MB)</li>
+				<ul>
+					<li>Pi-hole</li>
+				</ul>
+			<li>Netgear WNDR3800 with OpenWRT</li>
+			<li>NAS - Synology DS214Play (2X 4TB HDDs)</li>	
+		</ul>
+	</p>
+	<img height="150" data-src="https://a.pololu-files.com/picture/0J4940.1200.jpg?853f23e5cfd5c2255e7a48085bbfabe0" />
+	<img height="150" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="150" data-src="https://www.techspot.com/images/products/2013/storage/nas/org/2014-02-11-product-9.jpg" />
+	<img height="150" data-src="https://www.cnet.com/a/img/resize/64e75a408cc99bf852034d3c5caef99cae7f9994/hub/2011/09/20/b71ab1c0-bb76-11e2-8a8e-0291187978f3/34467812_OVR_RAW.jpg?auto=webp&width=768" />
+	<img height="150" data-src="https://external-preview.redd.it/5TsgyKsVUdjZcdaMZkCZQGf5X9Eddp6mAjoomzuG1RU.jpg?auto=webp&s=925c815f6989669b07e43af20b9eee189e179520" />
+</section>
+----
+<section>
+	<h3>Home Automation ~2017</h3>
+	<p>
+		<ul>
+			<li>Intel NUC
+				<ul>
+					<li>Vanilla Debian with multiple services</li>
+					<li>Pi-hole, XBMC, Apache, NFS mounts, cron jobs</li>
+				</ul>
+			</li>
+			<li>Raspberry Pi</li>
+				<ul>
+					<li>Home Assistant - Z-Wave & Wi-Fi devices</li>
+				</ul>
+			<li class="fragment fade-up" style="color: #ff2c2d">Network backbone was unreliable</li>
+			<li class="fragment fade-up">A lot of things were about to change!</li>
+		</ul>
+	</p>
+	<img height="150" data-src="https://magazine.odroid.com/wp-content/uploads/Home-Assistant-Figure-0-1.png" />
+</section>
+----
+<!-- .slide class="full" -->
+# Hardware
+### Networking
+----
+<section data-auto-animate>
+	<h3>2016</h3>
+	<p>
+		<ul>
+			<li>Netgear WNDR3800 with OpenWRT</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://www.cnet.com/a/img/resize/64e75a408cc99bf852034d3c5caef99cae7f9994/hub/2011/09/20/b71ab1c0-bb76-11e2-8a8e-0291187978f3/34467812_OVR_RAW.jpg?auto=webp&width=768" />
+	<img height="200" data-src="https://external-preview.redd.it/5TsgyKsVUdjZcdaMZkCZQGf5X9Eddp6mAjoomzuG1RU.jpg?auto=webp&s=925c815f6989669b07e43af20b9eee189e179520" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2017</h3>
+	<p>
+		<ul>
+			<li>2X UniFi Wireless UAP-AC-PRO (802.11ac)</li>
+			<li>UniFi Network Application on Intel NUC</li>
+			<li>Netgear WNDR3800 with OpenWRT</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://m.media-amazon.com/images/I/41tZFM7s2JS.jpg" />
+	<img height="200" data-src="https://cdn.prod.website-files.com/622b70d8906c7ab0c03f77f8/63b40a92093c6b2f3767e4e6_tMCv8T-y_400x400.png" />
+	<img height="200" data-src="https://www.cnet.com/a/img/resize/64e75a408cc99bf852034d3c5caef99cae7f9994/hub/2011/09/20/b71ab1c0-bb76-11e2-8a8e-0291187978f3/34467812_OVR_RAW.jpg?auto=webp&width=768" />
+	<img height="200" data-src="https://external-preview.redd.it/5TsgyKsVUdjZcdaMZkCZQGf5X9Eddp6mAjoomzuG1RU.jpg?auto=webp&s=925c815f6989669b07e43af20b9eee189e179520" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2018</h3>
+	<p>
+		<ul>
+			<li>2X UniFi Wireless UAP-AC-PRO (802.11ac)</li>
+			<li>UniFi Network Application on Intel NUC</li>
+			<li class="fragment highlight-red" data-fragment-index="1">Palo Alto Networks PA-220 Next-Generation Firewall</li>
+				<ul>
+					<li>Christmas gift from Palo Alto Networks!</li>
+					<li class="fragment fade-up" data-fragment-index="1" style="color: #ff2c2d">Required $500+ per year for license renewal</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="200" data-src="https://m.media-amazon.com/images/I/41tZFM7s2JS.jpg" />
+	<img height="200" data-src="https://cdn.prod.website-files.com/622b70d8906c7ab0c03f77f8/63b40a92093c6b2f3767e4e6_tMCv8T-y_400x400.png" />
+	<img height="200" data-src="https://cdn.cs.1worldsync.com/5e/81/5e815674-a385-47c9-8dba-82716a96e73a.jpg" />
+	<img height="200" data-src="https://getlogovector.com/wp-content/uploads/2020/09/palo-alto-networks-inc-logo-vector.png" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2019-20</h3>
+	<p>
+		<ul>
+			<li>2X UniFi Wireless UAP-AC-PRO (802.11ac)</li>
+			<li>UniFi Network Application in a dedicated VM</li>
+			<li>Qotom-Q555G6-S05 (Intel Core i5 7200U)</li>
+			<li class="fragment highlight-red" data-fragment-index="1">pfSense Open Source Firewall</li>
+				<ul>
+					<li class="fragment fade-up" data-fragment-index="1" style="color: #ff2c2d">Controversial licensing changes</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="200" data-src="https://m.media-amazon.com/images/I/41tZFM7s2JS.jpg" />
+	<img height="200" data-src="https://cdn.prod.website-files.com/622b70d8906c7ab0c03f77f8/63b40a92093c6b2f3767e4e6_tMCv8T-y_400x400.png" />
+	<img height="200" data-src="https://m.media-amazon.com/images/I/61p97hCELcL._AC_UF894,1000_QL80_.jpg" />
+	<img height="200" data-src="https://www3.technologyevaluation.com/getattachment/a471894b-a7c9-5ed6-964e-63f44b407a54/logo.jpg?source=tw2&ext=.jpg" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2021-23</h3>
+	<p>
+		<ul>
+			<li>2X UniFi Wireless UAP-AC-PRO (802.11ac)</li>
+			<li>UniFi Network Application in a dedicated VM</li>
+			<li>Qotom-Q555G6-S05 (Intel Core i5 7200U)</li>
+			<li>OPNSense Next-Generation Firewall</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://m.media-amazon.com/images/I/41tZFM7s2JS.jpg" />
+	<img height="200" data-src="https://cdn.prod.website-files.com/622b70d8906c7ab0c03f77f8/63b40a92093c6b2f3767e4e6_tMCv8T-y_400x400.png" />
+	<img height="200" data-src="https://m.media-amazon.com/images/I/61p97hCELcL._AC_UF894,1000_QL80_.jpg" />
+	<img height="200" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJ8k9_9gDgzZKVDsIpDNcc4PV3kLdQaApNA&s" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2021-23</h3>
+	<p>
+		<ul>
+			<li>2X UniFi Wireless UAP-AC-PRO (802.11ac)</li>
+			<li>1X UniFi Wireless UAP-nanoHD (802.11ac Wave 2)</li>
+			<li>UniFi Network Application in a dedicated VM</li>
+			<li>Qotom-Q555G6-S05 (Intel Core i5 7200U)</li>
+			<li>OPNSense Next-Generation Firewall</li>
+		</ul>
+	</p>
+	<img height="150" data-src="https://m.media-amazon.com/images/I/41tZFM7s2JS.jpg" />
+	<img height="150" data-src="https://m.media-amazon.com/images/I/41HEnrr70CS.jpg" />
+	<img height="150" data-src="https://cdn.prod.website-files.com/622b70d8906c7ab0c03f77f8/63b40a92093c6b2f3767e4e6_tMCv8T-y_400x400.png" />
+	<img height="150" data-src="https://m.media-amazon.com/images/I/61p97hCELcL._AC_UF894,1000_QL80_.jpg" />
+	<img height="150" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJ8k9_9gDgzZKVDsIpDNcc4PV3kLdQaApNA&s" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Now</h3>
+	<p>
+		<ul>
+			<li>2X UniFi Wireless U6-Mesh (Dual-Band WiFi 6)</li>
+			<li>1X UniFi Wireless UAP-nanoHD (802.11ac Wave 2)</li>
+			<li>UniFi Network Application in Kubernetes</li>
+			<li>Qotom-Q555G6-S05 (Intel Core i5 7200U)</li>
+			<li>OPNSense Next-Generation Firewall</li>
+		</ul>
+	</p>
+	<img height="150" data-src="https://m.media-amazon.com/images/I/31auqR9WmeL.jpg" />
+	<img height="150" data-src="https://m.media-amazon.com/images/I/41HEnrr70CS.jpg" />
+	<img height="150" data-src="https://cdn.prod.website-files.com/622b70d8906c7ab0c03f77f8/63b40a92093c6b2f3767e4e6_tMCv8T-y_400x400.png" />
+	<img height="150" data-src="https://m.media-amazon.com/images/I/61p97hCELcL._AC_UF894,1000_QL80_.jpg" />
+	<img height="150" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvJ8k9_9gDgzZKVDsIpDNcc4PV3kLdQaApNA&s" />
+</section>
+----
+<!-- .slide class="full" -->
+# Hardware
+### Compute
+----
+<section data-auto-animate>
+	<h3>2017</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+			<li>Raspberry Pi B (866 MHz / 512 MB)</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="200" data-src="https://a.pololu-files.com/picture/0J4940.1200.jpg?853f23e5cfd5c2255e7a48085bbfabe0" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2018</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+			<li>Raspberry Pi 3B (Quad-Core ARM Cortex A53 1.2 GHz / 1 GB)</li>
+			<li class="fragment highlight-red" data-fragment-index="1">Raspberry Pi B (866 MHz / 512 MB)</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="200" data-src="https://m.media-amazon.com/images/I/61nJo9FIkyL.jpg" />
+	<img height="200" data-src="https://a.pololu-files.com/picture/0J4940.1200.jpg?853f23e5cfd5c2255e7a48085bbfabe0" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2019</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+			<li>Raspberry Pi 3B (Quad-Core ARM Cortex A53 1.2 GHz / 1 GB)</li>
+			<li>Dell PowerEdge R720 Server (2x Intel Xeon E5-2660, 16 2.2 Ghz Cores / 32 GB)</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="200" data-src="https://m.media-amazon.com/images/I/61nJo9FIkyL.jpg" />
+	<img height="200" data-src="https://5.imimg.com/data5/SELLER/Default/2022/8/EQ/PM/SN/110323540/dell-r720-server-v2-16-core-128gb-ddr3-h710-raid-idrac7-1-8tb-sas-500x500.png" />
+</section>
+----
+<section data-auto-animate>
+	<h3>2020-22</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+			<li>Raspberry Pi 3B (Quad-Core ARM Cortex A53 1.2 GHz / 1 GB)</li>
+			<li>Dell PowerEdge R720 Server (2x Intel Xeon E5-2660, 16 2.2 Ghz Cores / 32 GB)</li>
+			<li>Dell OptiPlex 980 (3.2 GHz Intel i5-650 vPro Quad-Core / 8 GB)</li>
+		</ul>
+	</p>
+	<img height="200" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="200" data-src="https://m.media-amazon.com/images/I/61nJo9FIkyL.jpg" />
+	<img height="200" data-src="https://5.imimg.com/data5/SELLER/Default/2022/8/EQ/PM/SN/110323540/dell-r720-server-v2-16-core-128gb-ddr3-h710-raid-idrac7-1-8tb-sas-500x500.png" />
+	<img height="200" data-src="https://m.media-amazon.com/images/I/71H5yEGylYL.jpg" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Now</h3>
+	<p>
+		<ul>
+			<li>Intel NUC (1.3 GHz Intel i5-4250U Dual-Core / 8 GB)</li>
+			<li>Intel NUC 12 (3.4 GHz Intel Core i7-1260P 12-Core / 32 GB)</li>
+			<li style="opacity: 0.3;">Raspberry Pi 3B (Quad-Core ARM Cortex A53 1.2 GHz / 1 GB)</li>
+			<li style="opacity: 0.3;">Dell PowerEdge R720 Server (2x Intel Xeon E5-2660, 16 2.2 Ghz Cores / 32 GB)</li>
+			<li>Dell OptiPlex 980 (3.2 GHz Intel i5-650 vPro Quad-Core / 8 GB)</li>
+		</ul>
+	</p>
+	<img height="150" data-src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/intel_boxd54250wykh1_single_pack_d54250wykh_nuc_1395764458_1032240.jpg" />
+	<img height="150" data-src="https://m.media-amazon.com/images/I/71xJ1J5lfYL.jpg" />
+	<img height="150" style="opacity: 0.3;" data-src="https://m.media-amazon.com/images/I/61nJo9FIkyL.jpg" />
+	<img height="150" style="opacity: 0.3;" data-src="https://5.imimg.com/data5/SELLER/Default/2022/8/EQ/PM/SN/110323540/dell-r720-server-v2-16-core-128gb-ddr3-h710-raid-idrac7-1-8tb-sas-500x500.png" />
+	<img height="150" data-src="https://m.media-amazon.com/images/I/71H5yEGylYL.jpg" />
+</section>
+----
+<!-- .slide class="full" -->
+# Hardware
+### Storage
+----
+<section data-auto-animate>
+	<h3>2014-22</h3>
+	<p>
+		<ul>
+			<li>Synology DS214Play NAS</li>
+				<ul>
+					<li>2X 4TB Western Digital WD Red HDDs</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="200" data-src="https://www.techspot.com/images/products/2013/storage/nas/org/2014-02-11-product-9.jpg" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Now</h3>
+	<p>
+		<ul>
+			<li>Synology DS923+ NAS</li>
+				<ul>
+					<li>2X Seagate Ironwolf 4TB HDDs</li>
+					<li>2X Seagate Ironwolf 8TB HDDs</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="200" data-src="https://webobjects2.cdw.com/is/image/CDW/7253146?$product-main$" />
+</section>
+----
+<!-- .slide class="full" -->
+# Network Diagram
+----
+<img class="r-stretch" data-src="images/Skynet.jpg" />
+----
+<!-- .slide class="full" -->
+# Deployment
+----
+<section data-auto-animate>
+	<h3>Infrastructure</h3>
+	<p>
+		<ul>
+			<li>Intel NUC 12 - Proxmox Virtual Environment</li>
+				<ul>
+					<li>Home Assistant OS VM</li>
+					<li>2X Talos Linux VMs</li>
+				</ul>
+			<li>Dell OptiPlex 980 - Debian 12 Bookworm</li>
+		</ul>
+	</p>
+	<img height="150" data-src="https://logovectorseek.com/wp-content/uploads/2021/10/proxmox-server-solutions-gmbh-logo-vector.png" />
+	<img height="150" data-src="https://magazine.odroid.com/wp-content/uploads/Home-Assistant-Figure-0-1.png" />
+	<img height="150" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfsrHsTL7LJ40Fpbwf5AA9slAd5ziw_9bbQ&s" />
+	<img height="150" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsFGQrbTuHIecHgz5JtLE3VkQfHkcQ66c2_Q&s" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Orchestration</h3>
+	<p>
+		<ul>
+			<li>Cluster template</li>
+				<ul>
+					<li><a href="https://github.com/onedr0p/cluster-template" target="_blank">https://github.com/onedr0p/cluster-template</a></li>
+				</ul>
+			<li>Ansible</li>
+				<ul>
+					<li>Automated provisioning & configuration management</li>
+				</ul>
+			<li>k3s</li>
+				<ul>
+					<li>Highly available, certified Kubernetes distribution</li>
+					<li>Intended for production workloads</li>
+					<li>3 nodes</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="150" data-src="https://logowik.com/content/uploads/images/ansible3554.jpg" />
+	<img height="150" data-src="https://miro.medium.com/v2/resize:fit:1200/1*vczfQPNVKdJXTmcGB3VtkA.png" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Orchestration</h3>
+	<p>
+		<ul>
+			<li>Helm</li>
+				<ul>
+					<li>Manage Charts for deploying applications & operators</li>
+					<li>Charts - Packages of pre-configured Kubernetes resources</li>
+				</ul>
+			<li>Flux CD</li>
+			<ul>
+				<li>CI / CD pipeline for Kubernetes</li>
+				<li>Cluster tracks changes in a Git repository</li>
+				<li><a href="https://github.com/returnfloat/homelab" target="_blank">https://github.com/returnfloat/homelab</a></li>
+			</ul>
+		</ul>
+	</p>
+	<img height="200" data-src="https://us.v-cdn.net/6036895/uploads/GZZZZAS89HXG/image.png" />
+	<img height="200" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-oBADIhySPjTUzTgEhBxcQPoKE24f6xhDzw&s" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Orchestration</h3>
+	<p>
+		<ul>
+			<li>Cluster template includes:</li>
+				<ul>
+					<li>Flux CD - CI / CD pipeline backed by a Git repository</li>
+					<li>Cilium - eBPF-based networking & observability</li>
+					<li>spegel - OCI image registry mirror</li>
+					<li>cert-manager - Let's Encrypt X.509 certificates</li>
+					<li>reloader - Rolling upgrades on config/secret changes</li>
+					<li>openebs - Local storage volumes for k3s pods</li>
+					<li>ingress-nginx - NGINX reverse proxy & load balancer</li>
+					<li>external-dns - Public DNS management</li>
+					<li>cloudflared - Cloudflare network tunnels</li>
+					<li>Renovate - Automated dependency & chart updates</li>
+				</ul>
+		</ul>
+	</p>
+</section>
+----
+<section data-auto-animate>
+	<h3>Helm Chart Example</h3>
+	<pre class="r-stretch"><code data-trim data-noescape data-line-numbers="10-18|50-54|55-72|73-78|79-95|96-108">
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/common-3.2.1/charts/library/common/values.schema.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: &app outline
+  namespace: utilities
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 3.3.2
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+      interval: 15m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  dependsOn:
+    - name: cloudnative-pg
+      namespace: databases
+    - name: redis
+      namespace: databases
+    - name: onepassword-connect
+      namespace: security
+  values:
+    controllers:
+      outline:
+        strategy: RollingUpdate
+        annotations:
+          secret.reloader.stakater.com/reload: &secret outline-external-secret
+        initContainers:
+          01-initdb:
+            image:
+              repository: ghcr.io/onedr0p/postgres-init
+              tag: 16.3
+            envFrom:
+              - secretRef:
+                  name: *secret
+        containers:
+          app:
+            image:
+              repository: outlinewiki/outline
+              tag: 0.78.0
+              pullPolicy: IfNotPresent
+            env:
+              NODE_ENV: "production"
+              FILE_STORAGE: "local"
+              FILE_STORAGE_LOCAL_ROOT_DIR: "/var/lib/outline/data"
+              FILE_STORAGE_UPLOAD_MAX_SIZE: 104857600
+              FILE_STORAGE_IMPORT_MAX_SIZE: 104857600
+              FILE_STORAGE_WORKSPACE_IMPORT_MAX_SIZE: 104857600
+              LOG_LEVEL: "info"
+              DEFAULT_LANGUAGE: "en_US"
+              RATE_LIMITER_ENABLED: "true"
+              RATE_LIMITER_REQUESTS: 1000
+              RATE_LIMITER_DURATION_WINDOW: 60
+              WEB_CONCURRENCY: 1
+              ENABLE_UPDATES: "false"
+              PORT: &port 3000
+            envFrom:
+              - secretRef:
+                  name: outline-external-secret
+    service:
+      app:
+        controller: outline
+        ports:
+          http:
+            port: *port
+    ingress:
+      app:
+        enabled: true
+        className: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+        hosts:
+          - host: &host "outline.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+                service:
+                  identifier: app
+                  port: http
+        tls:
+          - hosts:
+              - *host
+    persistence:
+      data:
+        enabled: true
+        storageClass: nfs-csi
+        accessMode: ReadWriteOnce
+        type: persistentVolumeClaim
+        size: 10Gi
+        retain: true
+        advancedMounts:
+          outline:
+            app:
+              - path: /var/lib/outline/data
+                readOnly: false
+	</code></pre>
+</section>
+----
+<!-- .slide class="full" -->
+# Applications
+----
+<section data-auto-animate>
+	<h3>Secrets</h3>
+	<p>
+		<ul>
+			<li>external-secrets operator</li>
+			<li>onepassword-connect secret store</li>
+		</ul>
+	</p>
+	<img class="r-stretch" data-src="images/outline-external-secret.png" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Secrets</h3>
+	<pre class="r-stretch"><code data-trim data-noescape data-line-numbers="4-10|17-20,22,31-32,41,43-44|46,53-54">
+		---
+		apiVersion: external-secrets.io/v1beta1
+		kind: ExternalSecret
+		metadata:
+		  name: outline-external-secret
+		  namespace: utilities
+		spec:
+		  secretStoreRef:
+			kind: ClusterSecretStore
+			name: onepassword-connect
+		  refreshInterval: 30m
+		  target:
+			creationPolicy: Owner
+			deletionPolicy: "Delete"
+			template:
+			  engineVersion: v2
+			  data:
+				# outline
+				SECRET_KEY: "{{ .OUTLINE_SECRET_KEY }}"
+				UTILS_SECRET: "{{ .OUTLINE_UTILS_SECRET }}"
+				URL: "https://outline.{{ .HOMELAB_SECRET_DOMAIN }}"
+				DATABASE_URL: "postgres://{{ .OUTLINE_POSTGRESQL_USER }}:{{ .OUTLINE_POSTGRESQL_PASS }}@{{ .POSTGRESQL_HOST_INTERNAL }}:{{ .POSTGRESQL_PORT }}/{{ .OUTLINE_POSTGRESQL_DBNAME }}"
+				REDIS_URL: "redis://:{{ .REDIS_PASSWORD }}@{{ .REDIS_HOST }}:{{ .REDIS_PORT }}/{{ .REDIS_OUTLINE_DB }}"
+				SMTP_HOST: "{{ .HOMELAB_SMTP_HOST }}"
+				SMTP_PORT: "{{ .HOMELAB_SMTP_PORT }}"
+				SMTP_USERNAME: "{{ .HOMELAB_SMTP_USERNAME }}"
+				SMTP_PASSWORD: "{{ .HOMELAB_SMTP_PASS }}"
+				SMTP_FROM_EMAIL: "{{ .HOMELAB_SMTP_USERNAME }}"
+				SMTP_REPLY_EMAIL: "{{ .HOMELAB_SMTP_USERNAME }}"
+				SMTP_SECURE: "true"
+				OIDC_CLIENT_ID: "{{ .OUTLINE_OIDC_CLIENT_ID }}"
+				OIDC_CLIENT_SECRET: "{{ .OUTLINE_OIDC_CLIENT_SECRET }}"
+				OIDC_AUTH_URI: "https://auth.{{ .HOMELAB_SECRET_DOMAIN }}/application/o/authorize/"
+				OIDC_TOKEN_URI: "https://auth.{{ .HOMELAB_SECRET_DOMAIN }}/application/o/token/"
+				OIDC_USERINFO_URI: "https://auth.{{ .HOMELAB_SECRET_DOMAIN }}/application/o/userinfo/"
+				OIDC_LOGOUT_URI: "https://auth.{{ .HOMELAB_SECRET_DOMAIN }}/application/o/outline/end-session/"
+				OIDC_USERNAME_CLAIM: "preferred_username"
+				OIDC_DISPLAY_NAME: "Authentik"
+				OIDC_SCOPES: "openid profile email"
+				# postgres init
+				INIT_POSTGRES_DBNAME: "{{ .OUTLINE_POSTGRESQL_DBNAME }}"
+				INIT_POSTGRES_HOST: "{{ .POSTGRESQL_HOST }}"
+				INIT_POSTGRES_USER: "{{ .OUTLINE_POSTGRESQL_USER }}"
+				INIT_POSTGRES_PASS: "{{ .OUTLINE_POSTGRESQL_PASS }}"
+				INIT_POSTGRES_SUPER_PASS: "{{ .POSTGRESQL_SUPERUSER_PASS }}"
+		  dataFrom:
+			- extract:
+				key: postgresql-external-secret
+			- extract:
+				key: redis-external-secret
+			- extract:
+				key: homelab-external-secret
+			- extract:
+				key: outline-external-secret		
+	</code></pre>
+</section>
+----
+<section data-auto-animate>
+	<h3>Authentication</h3>
+	<p>
+		<ul>
+			<li>Authentik</li>
+				<ul>
+					<li>Self-hosted, open source identity provider</li>
+					<li>Supports OpenID Connect and SAML based SSO</li>
+					<li>Proxy providers for LDAP & HTTP header authentication</li>
+				</ul>
+		</ul>
+	</p>
+	<img height="200px" data-src="images/authentik-logo.png" />
+</section>
+----
+<section data-auto-animate>
+	<h3>Ideas</h3>
+	<p>
+		<ul>
+			<li>Helm Charts - <a href="https://kubesearch.dev/" target="_blank">https://kubesearch.dev/</a></li>
+			<li>Awesome-Selfhosted - <a href="https://github.com/awesome-selfhosted/awesome-selfhosted" target="_blank">https://github.com/awesome-selfhosted/awesome-selfhosted</a></li>
+			<li>Homelab Reddit - <a href="https://www.reddit.com/r/homelab/" target="_blank">https://www.reddit.com/r/homelab/</a></li>
+		</ul>
+	</p>
+</section>
+----
+<!-- .slide class="full" -->
+# Demo
+<a href="https://auth.akash.one/" target="_blank">https://auth.akash.one/</a>
+----
+<!-- .slide class="full" -->
+# Takeaways
+- Rome was not built in a day
+- The journey is more important than the final destination
+- Failure is imminent, but with persistence, so is success
+- Doing > Reading / Listening / Watching
+- Start with a small yet challenging goal
+----
+<!-- .slide class="full" -->
+# Q&A
+----
+<!-- .slide class="full" -->
+# Thank You
+
+					</script>
+				</section>
 			</div>
 		</div>
 
@@ -31,9 +717,30 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				
+				// The "normal" size of the presentation, aspect ratio will
+				// be preserved when the presentation is scaled to fit different
+				// resolutions. Can be specified using percentage units.
+				width: 1280,
+				height: 900,
+
+				// Factor of the display size that should remain empty around
+				// the content
+				margin: 0.04,
+
+				// Bounds for smallest/largest possible scale to apply to content
+				minScale: 0.2,
+				maxScale: 2.0,
 
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+
+				// Parallax background image
+				parallaxBackgroundImage: 'https://www.thoughtco.com/thmb/ZOk_Q8BBgf2pKYDSfjbUefmGpL8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-993959156-9c2533b1ed7a42a2a148b5d30f0340eb.jpg', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+				// parallaxBackgroundImage: 'https://image.cdn2.seaart.ai/2023-10-04/18913864076767237/702b471ea919ae4a8f9011bf5f77f313fc37a012_high.webp', // e.g. "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg"
+
+				// Parallax background size
+				parallaxBackgroundSize: '2100px 900px', // CSS syntax, e.g. "2100px 900px" - currently only pixels are supported (don't use % or auto)
 			});
 		</script>
 	</body>
